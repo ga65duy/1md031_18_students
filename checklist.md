@@ -20,13 +20,13 @@ Create an index.html file which contains:
 	- [X] An image
 	- [X] Information about allergies 
 - [X] A section to collect customer information:
-	- [ ] First- and Last Name (in one field)
-	- [ ] E-Mail Address
-	- [ ] Street
-	- [ ] House Number (only allowing numbers in this field)
-	- [ ] Gender (male, female, do not wish to provide as radio buttons)
-- [ ] A button to place the order
-- [ ] Ensure the website loads when opening http://localhost:3000/
+	- [X] First- and Last Name (in one field)
+	- [X] E-Mail Address
+	- [X] Street
+	- [X] House Number (only allowing numbers in this field)
+	- [X] Gender (male, female, do not wish to provide as radio buttons)
+- [X] A button to place the order
+- [X] Ensure the website loads when opening http://localhost:3000/
 
 ## 03 CSS
 

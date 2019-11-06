@@ -10,12 +10,10 @@
         <section>
             <h2>Select burger</h2>
             <p>Here you execute the burger selection</p>
-            <h3>The fire burger</h3>
-
             <table>
                 <thead>
                     <tr>
-                        <th>Fire Burger</th>
+                        <th>Classic Burger</th>
                         <th>Chicken Burger</th>
                         <th>Double Burger</th>
                     </tr>
@@ -23,13 +21,13 @@
                 <tbody>
                     <tr>
                         <td>
-                            <img src="\img\burger.jpg" width="200" height="200">
+                            <img src="\img\burger.jpg" width="200" height="150" alt="Span">
                         </td>
                         <td>
-                            <img src="\img\chicken.jpg" width="200" height="200">
+                            <img src="\img\chicken.jpg" width="200" height="150" alt="Span">
                         </td>
                         <td>
-                            <img src="\img\double.jpg" width="200" height="200">
+                            <img src="\img\double.jpg" width="200" height="150" alt="Span">
                         </td>
                     </tr>
                     <tr>
@@ -55,15 +53,50 @@
                     </tr>
                 </tbody>
             </table>
-
         </section>
-
         <section>
             <h2>Customer Information</h2>
             <p>This is where you provide necessary information</p>
+            <h3>Delivery information</h3>
+            <p>
+                <label for="fullname">Full Name</label><br>
+                <input type="text" id="fullname" name="fn" placeholder="First- and Last name" >
+            </p>
+            <p>
+                <label for="email">E-mail</label><br>
+                <input type="email" id="email" name="em" placeholder="E-mail address" >
+            </p>
+            <p>
+                <label for="street">Street</label><br>
+                <input id="street" name="s" placeholder="Street name">
+            </p>
+            <p>
+                <label for="house">House</label><br>
+                <input type="number" id="house" name="hn" placeholder="House number">
+            </p>
+            <p>
+                <label for="payment">Payment options</label><br>
+                <select id="payment" name="pay">
+                    <option selected>Credit card</option>
+                    <option>Paypal</option>
+                    <option>Visa Card</option>
+                    <option>Cash</option>
+                    <option>Whatever</option>
+                </select>
+            </p>
+            <p>
+                <label for="male"> Gender</label><br>
+                <input type="radio" id="male" name="m">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="f">
+                <label for="female">Female</label><br>
+                <input type="radio" id="nonbinary" name="nb">
+                <label for="nonbinary">Nonbinary</label><br>
+                <input type="radio" id="undisclosed" name="udc" checked>
+                <label for="undisclosed">Undisclosed</label>
+            </p>
         </section>
-
-
+        <button type="submit"><img src="\img\order.jpg" width="30" height="30" alt="Span">Order burger</button>
     </main>
     <hr/>
     <footer>&copy; 2019 Burger company</footer>
