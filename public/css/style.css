@@ -1,0 +1,39 @@
+
+
+body {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 20px;
+}
+
+button:hover{
+    background: yellow;
+    cursor: grab;
+}
+
+button {
+    margin: 0 20px 0 40px;
+}
+
+section {
+    margin: 0 20px 0 20px;
+    padding: 0 20px 0 20px;
+}
+
+h1 {
+    margin: 0 20px 0 20px;
+}
+
+table {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#black_background {
+    background: black;
+    color: white;
+}
