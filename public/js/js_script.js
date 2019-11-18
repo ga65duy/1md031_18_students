@@ -16,29 +16,32 @@ let burger5 = new MenuItem("pork", "1900 kCal", true, false);
 
 let menu_array = [burger1,burger2,burger3, burger4, burger5];
 
+
 let myBurgers = document.getElementsByClassName("burgers");
-for (let burger of food){
+
+for (let burger of food) {
     console.log(Object.values(burger).length);
     let div = document.createElement("div");
     let heading = document.createElement("h3");
-    let headingtext = document.createTextNode(burger.name);
-    heading.setAttribute("class","burger_heading");
-    let ul = document.createElement("ul");
-    for (let i = 0; i < Object.values(burger).length; i++) {
-        let li = document.createElement('li');
-        let value =Object.values(burger)[i];
-        if(i===2 && value){
-            li.appendChild(document.createTextNode("contains gluten"));
-            ul.appendChild(li);
-            continue;
-        }
-        if(i===3 && value){
-            li.appendChild(document.createTextNode("contains lactose"));
-            ul.appendChild(li);
-            continue;
-        }
 
-        li.appendChild(document.createTextNode(value));
+    let headingtext = document.createTextNode(burger.name);
+
+    heading.setAttribute("class", "burger_heading");
+    let ul = document.createElement("ul");
+
+    let li = document.createElement('li');
+    li.appendChild(document.createTextNode(burger.kCal + " kCal"));
+    ul.appendChild(li);
+
+    if (burger.gluten) {
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode("contains gluten"));
+        ul.appendChild(li);
+    }
+
+    if (burger.lactose) {
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode("contains lactose"));
         ul.appendChild(li);
 
     }
