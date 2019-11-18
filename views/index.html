@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<script type="text/javascript" src="menu.js"></script>
 <head>
     <link rel="stylesheet" type="text/css" href="./css/style.css">.
-    <script src="https://vuejs.org/js/vue.js"></script>
     <script src="./js/js_script.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script type="text/javascript" src="./js/menu.js"></script>
     <title>Your Burger</title>
     <meta charset="utf-8"/>
 </head>
@@ -19,12 +19,12 @@
             <p>Here you execute the burger selection</p>
 
             <div class="burgers">
-                <ol id="mytest">
-                    <li v-for="burger in menu_array" v-if="burger.gluten || burger.lactose">
-                        {{ burger.burgername }}
-                    </li>
-                </ol>
-                <div class="burger1">
+
+                    <!--<li v-for="burger in menu_array" v-if="burger.gluten || burger.lactose">-->
+                        <!--{{ burger.burgername }}-->
+                    <!--</li>-->
+
+                <!--<div class="burger1">
                     <h3 class="burger_heading">Classic Burger</h3>
                     <img src="./img/burger.jpg" width="200" height="180" alt="Span">
                     <ul>
@@ -48,7 +48,7 @@
                         <li>1800kCal</li>
                         <li>Contains <span class="bold">lactose</span></li>
                     </ul>
-                </div>
+                </div>-->
             </div>
            <!-- <table>
                 <thead>
