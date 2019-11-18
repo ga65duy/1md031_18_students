@@ -1,12 +1,11 @@
 /*
-var vm = new Vue({
-    el: '#myID',
-    data: {
-        arbitraryVariableName: 'Välj en burgare'
+new Vue({
+    el: '#order',
+    methods: {
+        ordering: function() {
+            console.log("Button clicked")
+        }
     }
-})
-<ol>
-<li v-for="burger in burgers" v-if="burger.stock > 0">
-    {{ burger.name }}
-</li>
-</ol>*/
+});
+
+v-on:click="ordering(key)" in html einfuegen*/

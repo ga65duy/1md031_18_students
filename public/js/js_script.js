@@ -46,49 +46,20 @@ for (let burger of food){
     div.appendChild(heading);
     div.appendChild(ul);
     myBurgers[0].appendChild(div);
-    /*console.log(burger);
-    var div = document.createElement("div");
-    var heading = document.createElement("h3");
-    var headingtext = document.createTextNode(burger.burgername);
-    var unorderdlist = document.createElement("ul");
+}
+/*let myButton = document.getElementById("order");
+myButton.addEventListener("click", ordering);
 
-    var listItem1 = document.createElement("li");
-    var listValue1 = document.createTextNode(burger.kCal);
-    listItem1.appendChild(listValue1);
-    if (burger.gluten){
-        var listItem2 = document.createElement("li");
-        var listValue2 = document.createTextNode("conatains gluten");
-        listItem2.appendChild(listValue2);
-    }
-    if (burger.lactose){
-        var listItem3 = document.createElement("li");
-        var listValue3 = document.createTextNode("contains lactose");
-        listItem3.appendChild(listValue3);
-    }
-    unorderdlist.appendChild(listItem1);
+function ordering (){
+    console.log("Button clicked")
+}*/
 
-    div.appendChild(unorderdlist);
-    heading.appendChild(headingtext);
-    div.appendChild(heading);
-    myBurgers[0].appendChild(div);*/
+var input = document.getElementById("customerinfo").value;
+console.log(input)
 
-    /*for(var value of Object.values(burger)){
-        console.log(value);
-        var div = document.createElement("div");
-        var heading = document.createElement("h3");
-
-        var unorderdlist = document.createElement("ul");
-        var listItem = document.createElement("li");
-        if (burger.gluten){
-            var listValue = document.createTextNode("conatains gluten");
-        }
-        if (burger.lactose){
-            var listValue = document.createTextNode("contains lactose");
-        }
-        var listValue = document.createTextNode(value);
-        listItem.appendChild(listValue);
-        unorderdlist.appendChild(listItem);
-        div.appendChild(unorderdlist);
-        myBurgers[0].appendChild(div);
-    }*/
+let inputarray = [];
+function keyup(e) {
+    //setting your input text to the global Javascript Variable for every key press
+    let inputTextValue = e.target.value;
+    inputarray.append(inputTextValue);
 }
