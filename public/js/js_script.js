@@ -22,12 +22,17 @@ let myBurgers = document.getElementsByClassName("burgers");
 for (let burger of food) {
     console.log(Object.values(burger).length);
     let div = document.createElement("div");
+
     let heading = document.createElement("h3");
-
     let headingtext = document.createTextNode(burger.name);
-
     heading.setAttribute("class", "burger_heading");
+
     let ul = document.createElement("ul");
+
+    let img = document.createElement("img");
+    img.src = burger.img;
+    img.width = "200";
+    img.height = "180";
 
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(burger.kCal + " kCal"));
@@ -47,6 +52,7 @@ for (let burger of food) {
     }
     heading.appendChild(headingtext);
     div.appendChild(heading);
+    div.appendChild(img);
     div.appendChild(ul);
     myBurgers[0].appendChild(div);
 }
@@ -58,7 +64,7 @@ function ordering (){
 }*/
 
 var input = document.getElementById("customerinfo").value;
-console.log(input)
+console.log(input);
 
 let inputarray = [];
 function keyup(e) {
