@@ -38,6 +38,17 @@ for (let burger of food) {
     li.appendChild(document.createTextNode(burger.kCal + " kCal"));
     ul.appendChild(li);
 
+    let checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.name = "name";
+    checkbox.value = "value";
+    checkbox.id = "id";
+
+    var label = document.createElement('label');
+    label.htmlFor = "id";
+
+    label.appendChild(document.createTextNode('Add '+ burger.name));
+
     if (burger.gluten) {
         let li = document.createElement('li');
         li.appendChild(document.createTextNode("contains gluten"));
@@ -48,12 +59,13 @@ for (let burger of food) {
         let li = document.createElement('li');
         li.appendChild(document.createTextNode("contains lactose"));
         ul.appendChild(li);
-
     }
     heading.appendChild(headingtext);
     div.appendChild(heading);
     div.appendChild(img);
     div.appendChild(ul);
+    div.appendChild(checkbox);
+    div.appendChild(label);
     myBurgers[0].appendChild(div);
 }
 /*let myButton = document.getElementById("order");
@@ -66,9 +78,23 @@ function ordering (){
 var input = document.getElementById("customerinfo").value;
 console.log(input);
 
-let inputarray = [];
-function keyup(e) {
-    //setting your input text to the global Javascript Variable for every key press
-    let inputTextValue = e.target.value;
-    inputarray.append(inputTextValue);
+
+function getInput() {
+    let fullname = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let street = document.getElementById("street").value;
+    let house = document.getElementById("house").value;
+    let payment = document.getElementById("payment").value;
+    var gender = document.getElementsByName('gender');
+    let selected;
+    for(let i = 0; i < gender.length; i++){
+        if(gender[i].checked){
+            selected = gender[i].value;
+        }
+    }
+    return [fullname,email,street,house,payment,selected];
 }
+
+console.log(getInput());
+
+/**console.log(document.getElementsByClassName("user")[0].value);**/

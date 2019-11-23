@@ -1,5 +1,4 @@
-/*
-new Vue({
+var vm = new Vue({
     el: '#order',
     methods: {
         ordering: function() {
@@ -8,4 +7,5 @@ new Vue({
     }
 });
 
-v-on:click="ordering(key)" in html einfuegen*/
+
+

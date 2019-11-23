@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <link rel="stylesheet" type="text/css" href="./css/style.css">.
     <script src="./js/js_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="./js/vue_script.js" defer></script>
     <script type="text/javascript" src="./js/menu.js"></script>
     <title>Your Burger</title>
     <meta charset="utf-8"/>
@@ -19,10 +20,11 @@
             <p>Here you execute the burger selection</p>
 
             <div class="burgers">
-
-                    <!--<li v-for="burger in menu_array" v-if="burger.gluten || burger.lactose">-->
-                        <!--{{ burger.burgername }}-->
-                    <!--</li>-->
+<!--                <ul>
+                    <li v-for="burger in menu_array" v-if="burger.gluten || burger.lactose">
+                        {{ burger.name }}
+                    </li>
+                </ul>-->
 
                 <!--<div class="burger1">
                     <h3 class="burger_heading">Classic Burger</h3>
@@ -95,7 +97,7 @@
             </table>
             -->
         </section>
-        <section id="customerinfo">
+        <section id="customerinfo" class="user">
             <h2>Customer Information</h2>
             <p>This is where you provide necessary information</p>
             <h3>Delivery information</h3>
@@ -127,17 +129,20 @@
             </p>
             <p>
                 <label for="male"> Gender</label><br>
-                <input type="radio" id="male" name="m">
+                <input type="radio" id="male" name="gender" value="Male">
                 <label for="male">Male</label><br>
-                <input type="radio" id="female" name="f">
+                <input type="radio" id="female" name="gender" value="Female">
                 <label for="female">Female</label><br>
-                <input type="radio" id="nonbinary" name="nb">
+                <input type="radio" id="nonbinary" name="gender" value="Non-binary">
                 <label for="nonbinary">Nonbinary</label><br>
-                <input type="radio" id="undisclosed" name="udc" checked>
+                <input type="radio" id="undisclosed" name="gender" value="Undisclosed" checked>
                 <label for="undisclosed">Undisclosed</label>
             </p>
         </section>
-        <button id ="order" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
+        <button id="order" v-on:click="ordering()" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
+        <div id="orderinfo">
+
+        </div>
     </main>
     <hr/>
     <footer>&copy; 2019 Burger company</footer>
