@@ -21,7 +21,6 @@ let menu_array = [burger1,burger2,burger3, burger4, burger5];
 let myBurgers = document.getElementsByClassName("burgers");
 
 /*for (let burger of food) {
-    console.log(Object.values(burger).length);
     let div = document.createElement("div");
 
     let heading = document.createElement("h3");
@@ -77,26 +76,26 @@ function ordering (){
     console.log("Button clicked")
 }*/
 
-function getInput() {
-    let fullname = document.getElementById("fullname").value;
-    let email = document.getElementById("email").value;
-    let street = document.getElementById("street").value;
-    let house = document.getElementById("house").value;
-    let payment = document.getElementById("payment").value;
-    let gender = document.getElementsByName('gender');
+function GetInput() {
     let selected;
+    let gender = document.getElementsByName('gender');
     for(let i = 0; i < gender.length; i++){
         if(gender[i].checked){
             selected = gender[i].value;
         }
     }
     let burger = document.getElementsByName("burgerselection");
-    let burgerarray = [];
+    let burgerstring="";
     for(let i = 0; i < burger.length; i++){
-        if(gender[i].checked){
-            burgerarray.append(gender[i].value);
+        if(burger[i].checked){
+            burgerstring= burgerstring + (burger[i].value) + ", ";
         }
     }
-    console.log([fullname,email,street,house,payment,selected, burgerarray]);
-    return [fullname,email,street,house,payment,selected, burgerarray];
+    this.fullname = document.getElementById("fullname").value;
+    this.email = document.getElementById("email").value;
+    /*this.street = document.getElementById("street").value;
+    this.house = document.getElementById("house").value;*/
+    this.payment = document.getElementById("payment").value;
+    this.gender= selected;
+    this.burgers = burgerstring;
 }

@@ -26,16 +26,16 @@
                     <img v-bind:src=burger.img width="200" height="180" alt="Span">
                     <ul>
                         <li>
-                            {{burger.kCal}}
+                            {{burger.kCal}} cKal
                         </li>
-                        <li>
-                            {{burger.gluten}}
+                        <li v-if="burger.gluten">
+                            Contains <span class="bold">gluten</span>
                         </li>
-                        <li>
-                            {{burger.gluten}}
+                        <li v-if="burger.lactose">
+                            Contains <span class="bold">lactose</span>
                         </li>
                     </ul>
-                    <input type="checkbox" name="burgerselection" value=burger.name> Add {{burger.name}}<br>
+                    <input type="checkbox" name="burgerselection" v-bind:value=burger.name> Add {{burger.name}}<br>
                 </div>
 
                 <!--<div class="burger1">
@@ -121,14 +121,14 @@
                 <label for="email">E-mail</label><br>
                 <input type="email" id="email" name="em" placeholder="E-mail address" >
             </p>
-            <p>
+            <!--<p>
                 <label for="street">Street</label><br>
                 <input id="street" name="s" placeholder="Street name">
             </p>
             <p>
                 <label for="house">House</label><br>
                 <input type="number" id="house" name="hn" placeholder="House number">
-            </p>
+            </p>-->
             <p>
                 <label for="payment">Payment options</label><br>
                 <select id="payment" name="pay">
@@ -153,8 +153,24 @@
         </section>
         <button id="order" v-on:click="ordering()" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
         <div id="orderinfo">
-            <h3 v-for="info in userInfo">Your order:</h3>
-            {{info}}
+            <!--<h3>Your order:</h3>
+            Fullname: {{userInfo.fullname}}<br>
+            E-mail: {{userInfo.email}} <br>
+            Gender: {{userInfo.gender}}<br>
+            &lt;!&ndash;Street: {{userInfo.street}}
+            House: {{userInfo.house}}&ndash;&gt;
+            Payment: {{userInfo.payment}}<br>
+            Burgers: {{userInfo.burgers}}<br>-->
+           <!--<h1> Click in the map! </h1>
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+                <div id="dots" v-on:click="addOrder">
+                    <div v-for="(order, key) in orders"
+                            v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                        {{key}}
+                    </div>
+                </div>
+            </div>-->
         </div>
     </main>
     <hr/>
