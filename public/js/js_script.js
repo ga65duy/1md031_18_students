@@ -1,6 +1,7 @@
-function MenuItem(burger_name, kCal, gluten, lactose) {
+function MenuItem(burger_name, kCal, img, gluten, lactose) {
     this.name = burger_name;
     this.kCal =kCal;
+    this.img =img;
     this.gluten = gluten;
     this.lactose = lactose;
     this.namekCal = function() {
@@ -8,18 +9,18 @@ function MenuItem(burger_name, kCal, gluten, lactose) {
     };
 }
 
-let burger1 = new MenuItem("chicken", "1000 kCal", false, true);
-let burger2 = new MenuItem("bacon", "1300 kCal", true, false);
-let burger3 = new MenuItem("halumni", "1200 kCal", true, true);
-let burger4 = new MenuItem("beef", "1800 kCal", false, false);
-let burger5 = new MenuItem("pork", "1900 kCal", true, false);
+let burger1 = new MenuItem("Chicken", "1000 kCal","./img/chicken.jpg", false, true);
+let burger2 = new MenuItem("Bacon", "1300 kCal", "./img/bacon.jpg", true, false);
+let burger3 = new MenuItem("Halumni", "1200 kCal", "./img/halumni.jpg", true, true);
+let burger4 = new MenuItem("Beef", "1800 kCal", "./img/double.jpg", false, false);
+let burger5 = new MenuItem("Pork", "1900 kCal", "./img/burger.jpg",true, false);
 
 let menu_array = [burger1,burger2,burger3, burger4, burger5];
 
 
 let myBurgers = document.getElementsByClassName("burgers");
 
-for (let burger of food) {
+/*for (let burger of food) {
     console.log(Object.values(burger).length);
     let div = document.createElement("div");
 
@@ -67,7 +68,8 @@ for (let burger of food) {
     div.appendChild(checkbox);
     div.appendChild(label);
     myBurgers[0].appendChild(div);
-}
+}*/
+
 /*let myButton = document.getElementById("order");
 myButton.addEventListener("click", ordering);
 
@@ -75,26 +77,26 @@ function ordering (){
     console.log("Button clicked")
 }*/
 
-var input = document.getElementById("customerinfo").value;
-console.log(input);
-
-
 function getInput() {
     let fullname = document.getElementById("fullname").value;
     let email = document.getElementById("email").value;
     let street = document.getElementById("street").value;
     let house = document.getElementById("house").value;
     let payment = document.getElementById("payment").value;
-    var gender = document.getElementsByName('gender');
+    let gender = document.getElementsByName('gender');
     let selected;
     for(let i = 0; i < gender.length; i++){
         if(gender[i].checked){
             selected = gender[i].value;
         }
     }
-    return [fullname,email,street,house,payment,selected];
+    let burger = document.getElementsByName("burgerselection");
+    let burgerarray = [];
+    for(let i = 0; i < burger.length; i++){
+        if(gender[i].checked){
+            burgerarray.append(gender[i].value);
+        }
+    }
+    console.log([fullname,email,street,house,payment,selected, burgerarray]);
+    return [fullname,email,street,house,payment,selected, burgerarray];
 }
-
-console.log(getInput());
-
-/**console.log(document.getElementsByClassName("user")[0].value);**/

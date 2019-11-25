@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="./css/style.css">.
     <script src="./js/js_script.js" defer></script>
+    <script type="text/javascript" src="./js/menu.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script src="./js/vue_script.js" defer></script>
-    <script type="text/javascript" src="./js/menu.js"></script>
     <title>Your Burger</title>
     <meta charset="utf-8"/>
 </head>
@@ -19,12 +20,23 @@
             <h2>Select burger</h2>
             <p>Here you execute the burger selection</p>
 
-            <div class="burgers">
-<!--                <ul>
-                    <li v-for="burger in menu_array" v-if="burger.gluten || burger.lactose">
-                        {{ burger.name }}
-                    </li>
-                </ul>-->
+            <div class="burgers" id="burgers">
+                <div v-for="burger in food">
+                    <h3 class="burger_heading">{{ burger.name }}</h3>
+                    <img v-bind:src=burger.img width="200" height="180" alt="Span">
+                    <ul>
+                        <li>
+                            {{burger.kCal}}
+                        </li>
+                        <li>
+                            {{burger.gluten}}
+                        </li>
+                        <li>
+                            {{burger.gluten}}
+                        </li>
+                    </ul>
+                    <input type="checkbox" name="burgerselection" value=burger.name> Add {{burger.name}}<br>
+                </div>
 
                 <!--<div class="burger1">
                     <h3 class="burger_heading">Classic Burger</h3>
@@ -141,7 +153,8 @@
         </section>
         <button id="order" v-on:click="ordering()" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
         <div id="orderinfo">
-
+            <h3 v-for="info in userInfo">Your order:</h3>
+            {{info}}
         </div>
     </main>
     <hr/>
