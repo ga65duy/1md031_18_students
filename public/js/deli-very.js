@@ -26,6 +26,7 @@ var vm = new Vue({
       return lastOrder + 1;
     },
     addOrder: function (event) {
+      console.log("addORder");
       var offset = {x: event.currentTarget.getBoundingClientRect().left,
                     y: event.currentTarget.getBoundingClientRect().top};
       socket.emit("addOrder", { orderId: this.getNext(),

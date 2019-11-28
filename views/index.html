@@ -2,11 +2,17 @@
 <html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html"
       xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">.
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="css/deli-very.css">
     <script src="./js/js_script.js" defer></script>
-    <script type="text/javascript" src="./js/menu.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
+    <script type="text/javascript" src="./js/menu.js" defer></script>
     <script src="./js/vue_script.js" defer></script>
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="/vue/vue.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script src="js/deli-very.js" defer></script>
     <title>Your Burger</title>
     <meta charset="utf-8"/>
 </head>
@@ -151,26 +157,24 @@
                 <label for="undisclosed">Undisclosed</label>
             </p>
         </section>
-        <button id="order" v-on:click="ordering()" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
-        <div id="orderinfo">
-            <!--<h3>Your order:</h3>
-            Fullname: {{userInfo.fullname}}<br>
-            E-mail: {{userInfo.email}} <br>
-            Gender: {{userInfo.gender}}<br>
-            &lt;!&ndash;Street: {{userInfo.street}}
-            House: {{userInfo.house}}&ndash;&gt;
-            Payment: {{userInfo.payment}}<br>
-            Burgers: {{userInfo.burgers}}<br>-->
-           <!--<h1> Click in the map! </h1>
-            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+        <h1> Click in the map! </h1>
+        <a href="/map" target="_blank">Open dispatcher in new window</a>.
             <div class="view-box">
                 <div id="dots" v-on:click="addOrder">
                     <div v-for="(order, key) in orders"
-                            v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                         v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
                         {{key}}
                     </div>
-                </div>
-            </div>-->
+            </div>
+        </div>
+        <button id="order" v-on:click="ordering()" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
+        <div id="orderinfo" v-if="isHidden === false">
+            <h3>Your order:</h3>
+            Fullname: {{userInfo.fullname}}<br>
+            E-mail: {{userInfo.email}} <br>
+            Gender: {{userInfo.gender}}<br>
+            Payment: {{userInfo.payment}}<br>
+            Burgers: {{userInfo.burgers}}<br>
         </div>
     </main>
     <hr/>
