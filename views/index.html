@@ -158,21 +158,24 @@
         </section>
         <h1> Click in the map! </h1>
             <div class="view-box">
-                <div id="dots" v-on:click="addOrder">
-                    <div v-for="(order, key) in orders"
+                <div id="dots" v-on:click="displayOrder">
+                    <div v-for="order in orders"
                          v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-                        {{key}}
+                        T
                     </div>
             </div>
         </div>
         <button id="order" v-on:click="ordering()" type="submit"><img src="./img/order.jpg" width="30" height="30" alt="Span">Order burger</button>
         <div id="orderinfo" v-if="isHidden === false">
-            <h3>Your order:</h3>
+            <h2>Order confirmation</h2>
+            <h3> Customer details </h3>
             Fullname: {{userInfo.fullname}}<br>
             E-mail: {{userInfo.email}} <br>
             Gender: {{userInfo.gender}}<br>
             Payment: {{userInfo.payment}}<br>
-            Burgers: {{userInfo.burgers}}<br>
+
+            <h3>Order summary</h3>
+            {{ userInfo.burgers}}
         </div>
     </main>
     <hr/>

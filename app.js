@@ -39,9 +39,17 @@ function Data() {
 /*
   Adds an order to to the queue
 */
+
+Data.prototype.getNext = function (){
+  var lastOrder = Object.keys(this.orders).reduce(function (last, next) {
+    return Math.max(last, next);
+  }, 0);
+  return lastOrder + 1;
+};
+
 Data.prototype.addOrder = function (order) {
   //Store the order in an "associative array" with orderId as key
-  this.orders[order.orderId] = order;
+  this.orders[this.getNext()] = order;
 };
 
 Data.prototype.getAllOrders = function () {
